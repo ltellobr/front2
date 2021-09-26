@@ -55,11 +55,24 @@ public class ControladorUsuarios extends HttpServlet {
 		}
 		if (consultar != null) {
 			if (cedula != "" && cedula != null) {
+				boolean existe = false;					
 				try {
-					ArrayList<Usuarios> listaid = UsuariosJSON.getforIdJSON(cedula);
-					request.setAttribute("lista", listaid);
-					request.getRequestDispatcher("Usuario.jsp").forward(request, response);	
+					ArrayList<Usuarios> lista = UsuariosJSON.getJSON();
+					for (Usuarios usuario_prueba: lista) {
+						if(usuario_prueba.getCedula_usuario() == Long.parseLong(cedula)) {
+							existe = true;
+						}
+					}
+					if(!existe) {
+						request.setAttribute("validacion", 8);//El usuario no existe
+						request.getRequestDispatcher("/Usuario.jsp").forward(request, response);
+					}else {
+						ArrayList<Usuarios> listaid = UsuariosJSON.getforIdJSON(cedula);
+						request.setAttribute("lista", listaid );
+						request.getRequestDispatcher("Usuario.jsp").forward(request, response);
+					}
 				} catch (Exception e) {
+					e.printStackTrace();
 					out.println("Catch :(");
 					out.println(cedula);
 					// TODO: handle exception
@@ -112,13 +125,32 @@ public class ControladorUsuarios extends HttpServlet {
 		}
 		if (eliminar != null) {
 			if (cedula != "" && cedula != null) {
-				int borrado = UsuariosJSON.deleteJSON(cedula);
-				if(borrado == 200) {
-					request.setAttribute("validacion", 5);//Usuario Borrado
-					request.getRequestDispatcher("/Usuario.jsp").forward(request, response);
-				}else {
-					request.setAttribute("validacion", 3);//Ha habido un error
-					request.getRequestDispatcher("/Usuario.jsp").forward(request, response);
+				boolean existe = false;					
+				try {
+					ArrayList<Usuarios> lista = UsuariosJSON.getJSON();
+					for (Usuarios usuario_prueba: lista) {
+						if(usuario_prueba.getCedula_usuario() == Long.parseLong(cedula)) {
+							existe = true;
+						}
+					}
+					if(!existe) {
+						request.setAttribute("validacion", 8);//El usuario no existe
+						request.getRequestDispatcher("/Usuario.jsp").forward(request, response);
+					}else {
+						int borrado = UsuariosJSON.deleteJSON(cedula);
+						if(borrado == 200) {
+							request.setAttribute("validacion", 5);//Usuario Borrado
+							request.getRequestDispatcher("/Usuario.jsp").forward(request, response);
+						}else {
+							request.setAttribute("validacion", 3);//Ha habido un error
+							request.getRequestDispatcher("/Usuario.jsp").forward(request, response);
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					out.println("Catch :(");
+					out.println(cedula);
+					// TODO: handle exception
 				}
 			} else {
 				request.setAttribute("validacion", 0);//Ingrese el campo cedula

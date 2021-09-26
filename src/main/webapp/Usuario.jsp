@@ -133,6 +133,13 @@ h3, p {
 								</div>
 							</div>
 							</c:if>	
+							<c:if test="${validacion == 8}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>El usuario no existe</h5>
+								</div>
+							</div>
+							</c:if>	
 							
 						<!--FIN VALIDACIONES  -->
 							<p>
