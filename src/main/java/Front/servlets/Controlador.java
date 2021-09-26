@@ -92,8 +92,7 @@ public class Controlador extends HttpServlet {
 			
 		}
 		if (menu.equals("Cliente")) {
-			out.println("<h1>Aqui va la interfaz Cliente</h1>");
-			//request.getRequestDispatcher("Usuario.jsp").forward(request, response);
+			request.getRequestDispatcher("Cliente.jsp").forward(request, response);
 		}
 		if (menu.equals("Proveedor")) {
 			out.println("<h1>Aqui va la interfaz Proveedor</h1>");

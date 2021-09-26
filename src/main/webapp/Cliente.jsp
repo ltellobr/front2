@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,31 +33,31 @@ h3, p {
 				<ul class="navbar-nav">
 					<li class="nav-item active"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Principal">Inicio</a></li>
+						class="btn btn-outline-light" href="Controlador?accion=Menu&menu=Principal">Inicio</a></li>
 					<!-- Boton Navbar Inicio  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Usuario&accion=Listar">Usuarios</a></li>
+						class="btn btn-outline-light" href="Controlador?accion=Menu&menu=Usuario">Usuarios</a></li>
 					<!-- Boton Navbar Usuario  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Cliente">Clientes</a></li>
+						class="btn btn-outline-light" href="Controlador?accion=Menu&menu=Cliente">Clientes</a></li>
 					<!-- Boton Navbar Cliente  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Proveedor">Proveedores</a></li>
+						class="btn btn-outline-light" href="Controlador?accion=Menu&menu=Proveedor">Proveedores</a></li>
 					<!-- Boton Navbar Proveedor  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Producto">Productos</a></li>
+						class="btn btn-outline-light" href="Controlador?accion=Menu&menu=Productos">Productos</a></li>
 					<!-- Boton Navbar Productos  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Ventas">Ventas</a></li>
+						class="btn btn-outline-light" href="Controlador?accion=Menu&menu=Ventas">Ventas</a></li>
 					<!-- Boton Navbar Ventas  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Reporte">Reportes</a></li>
+						class="btn btn-outline-light" href="Controlador?accion=Menu&menu=Reportes">Reportes</a></li>
 					<!-- Boton Navbar Reportes  -->
 				</ul>
 			</div>
@@ -74,23 +75,89 @@ h3, p {
 						<span>Sistema de registro de Clientes</span>
 					</div>
 					<div class="card-body">
-						<form action="CRUD" method="POST">
+						<form action="ControladorClientes" method="GET">
+						<!-- VALIDACIIONES -->
+							<c:if test="${validacion == 0}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>Por favor digite el campo cedula</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 1}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>Por favor digite todos los campos para agregar el cliente</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 2}">
+							<div class = "card">
+								<div class="card-body bg-success rounded">
+									<h5 class = text-center>Cliente creado</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 3}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>Ha habido un error :(</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 4}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>El cliente ya existe</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 5}">
+							<div class = "card">
+								<div class="card-body bg-warning rounded">
+									<h5 class = text-center>Cliente eliminado</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 6}">
+							<div class = "card">
+								<div class="card-body bg-success rounded">
+									<h5 class = text-center>Cliente Modificado</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 7}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>El cliente no existe no se puede modificar</h5>
+								</div>
+							</div>
+							</c:if>	
+							<c:if test="${validacion == 8}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>El cliente no existe</h5>
+								</div>
+							</div>
+							</c:if>	
+							
+						<!--FIN VALIDACIONES  -->
 							<p>
-								Cédula: <input class="form-control" placeholder="Digite cedula" type="number" name="cedula" value = "${usuario.getCedula()}">
-							</p>
-							<p>
-								Nombre:<input class="form-control" placeholder="Digite Nombre Completo" type="text" name="nombre" id="idNombre" value = "${usuario.getNombre()}">
-							</p>
-							<p>
-								E-mail:<input class="form-control" placeholder="Digite E-mail" type="e-mail" name="E-mail" id="idE-mail" value = "${usuario.getEmail()}">
+								Cédula: <input class="form-control" placeholder="Digite cedula" type="number" name="cedula" value = "${clientes.getCedula_cliente()}">
 							</p>
 							<p>
 								Direccion : <input class="form-control" type="address" placeholder="Digite su Direccion "
-									name="Direcion" value = "${usuario.getDirecion()}">
+									name="direccion" value = "${clientes.getDireccion_cliente()}">
+							</p>	
+							<p>
+								E-mail:<input class="form-control" placeholder="Digite E-mail" type="e-mail" name="email" id="idEmail" value = "${clientes.getEmail_cliente()}">
 							</p>
 							<p>
-								Telefono: <input class="form-control" type="tel"
-									placeholder="Digite su Telefono" name="Tel" value = "${usuario.getTelefono()}">
+								Nombre:<input class="form-control" placeholder="Digite Nombre Completo" type="text" name="nombre" id="idNombre" value = "${clientes.getNombre_cliente()}">
+							</p>
+							<p>
+								Teléfono: <input class="form-control" type="tel"
+									placeholder="Digite su Telefono" name="telefono" value = "${clientes.getTelefono_cliente()}">
 							</p>
 							<div class="d-flex justify-content-between align-items-center"">
 								<input type="submit" name="Agregar" value="Agregar" class="btn btn-success btn-sm"> 
@@ -105,7 +172,7 @@ h3, p {
 			<div class="col-lg col-mg col-sm col">
 				<div class="card-header bg-success text-light d-flex justify-content-between align-items-center">
 					<span>Presione para Listar los Clientes</span>
-					<form action="CRUD" method ="POST">
+					<form action="ControladorClientes" method ="GET">
 						<input type="submit" name="Listar_Clientes" value="Listar_Clientes" class="btn btn-primary btn-sm">
 					</form>
 				</div>
@@ -115,22 +182,22 @@ h3, p {
 						<thead>
 							<tr>
 								<th>Cedula</th>
-								<th>Nombre</th>
-								<th>E-mail</th>
 								<th>Direccion</th>
+								<th>E-mail</th>
+								<th>Nombre</th>
 								<th>Telefono</th>
 								<th>Accion</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="usuario" items="${Clientes}">
+							<c:forEach var="clientes" items="${lista}">
 								<tr>
-									<td>${usuario.getCedula()}</td>
-									<td>${usuario.getNombre()}</td>
-									<td>${usuario.getEmail()}</td>
-									<td>${usuario.getDireccion()}</td>
-									<td>${usuario.getTelefono()}</td>
-									<td><a class="btn btn-warning" href="CRUD?accion=editar&id=${usuario.getCedula()}">Editar</a>
+									<td>${clientes.getCedula_cliente()}</td>
+									<td>${clientes.getDireccion_cliente()}</td>
+									<td>${clientes.getEmail_cliente()}</td>
+									<td>${clientes.getNombre_cliente()}</td>
+									<td>${clientes.getTelefono_cliente()}</td>
+									<td><a class="btn btn-warning" href="ControladorClientes?editar=editar&id=${clientes.getCedula_cliente()}">Editar</a>
 								</tr>
 							</c:forEach>
 						</tbody>
