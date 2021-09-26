@@ -1,16 +1,18 @@
-package Servlet;
+package Front.modelo;
 
 public class Usuarios {
 	
-	private long cedula_usuario;
+	private Long cedula_usuario;
 	private String email_usuario;
 	private String nombre_usuario;
 	private String password;
 	private String usuario;
-	public long getCedula_usuario() {
+	
+	
+	public Long getCedula_usuario() {
 		return cedula_usuario;
 	}
-	public void setCedula_usuario(long cedula_usuario) {
+	public void setCedula_usuario(Long cedula_usuario) {
 		this.cedula_usuario = cedula_usuario;
 	}
 	public String getEmail_usuario() {
@@ -37,5 +39,6 @@ public class Usuarios {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-
+	
+	
 }
