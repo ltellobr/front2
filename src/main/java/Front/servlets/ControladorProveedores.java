@@ -191,7 +191,7 @@ public class ControladorProveedores extends HttpServlet {
 					request.getRequestDispatcher("/Proveedores.jsp").forward(request, response);
 				}	
 			} else {
-				request.setAttribute("validacion", 1);//Ingrese todos los campos
+				request.setAttribute("validacion", 9);//Ingrese todos los campos
 				request.getRequestDispatcher("/Proveedores.jsp").forward(request, response);
 			}
 		}

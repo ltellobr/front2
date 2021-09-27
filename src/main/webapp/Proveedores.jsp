@@ -140,6 +140,13 @@ h3, p {
 								</div>
 							</div>
 							</c:if>	
+							<c:if test="${validacion == 9}">
+							<div class = "card">
+								<div class="card-body bg-danger rounded">
+									<h5 class = text-center>Por favor digite todos los campos para actualizar el proveedor</h5>
+								</div>
+							</div>
+							</c:if>	
 							
 						<!--FIN VALIDACIONES  -->
 							<p>
