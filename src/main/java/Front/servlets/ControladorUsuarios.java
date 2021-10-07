@@ -37,7 +37,7 @@ public class ControladorUsuarios extends HttpServlet {
 		String email = request.getParameter("email");
 		String usuario = request.getParameter("user");
 		String contrasena = request.getParameter("pass");
-		//boones
+		//botones
 		String consultar = request.getParameter("Consultar");
 		String Agregar = request.getParameter("Agregar");
 		String Listar = request.getParameter("Listar_Usuarios");
