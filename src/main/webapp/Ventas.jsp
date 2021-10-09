@@ -86,12 +86,12 @@ h3, p {
 								<label class = "col-form-label">Cedula</label>
 								<div class = "col-sm-5">
 									<div class="input-group col-sm-5">
-  										<input class = "form-control" type="number" name ="txtCedula"> <!-- Texto cedula del cliente -->
+  										<input class = "form-control" type="number" name ="txtCedula" value = "${cliente.getCedula_cliente()}"> <!-- Texto cedula del cliente -->
   										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar1" value ="Buscar Cliente"> <!-- Boton buscar cliente -->
 									</div>
 								</div>
 								<div class = "col-sm-6 mb-2">
-									<input class = "form-control" type = "text" disabled="disabled" name = "salidaCleinte" value = "${cliente.getNombre_cliente}"> <!-- Texto nombre del cliente -->
+									<input class = "form-control" type = "text" disabled="disabled" name = "salidaCleinte" value = "${cliente.getNombre_cliente()}"> <!-- Texto nombre del cliente -->
 								</div>
 							</div>	
 						</form>
@@ -107,12 +107,12 @@ h3, p {
 							<label class = "col-form-label">Codigo de producto</label>
 								<div class = "col-sm-5">
 									<div class="input-group col-sm-5">
-  										<input class = "form-control" type="text" name ="txtCod"> <!-- Texto Buscar  producto -->
-  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar" value ="Buscar Producto"> <!-- Tboton para buscar el producto -->
+  										<input class = "form-control" type="text" name ="txtCod" value = "${producto.getCodigo_producto()}"> <!-- Texto Buscar  producto -->
+  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar2" value ="Buscar Producto"> <!-- Tboton para buscar el producto -->
 									</div>
 								</div>
 								<div class = "col-sm-6 mb-2">
-									<input class = "form-control" type = "text" disabled="disabled" name="nombre_prod"> <!-- Texto nombre del producto -->
+									<input class = "form-control" type = "text" disabled="disabled" name="nombre_prod" value = "${producto.getNombre_producto()}"> <!-- Texto nombre del producto -->
 								</div>
 						</div>
 						<div class = "row mb-4">
@@ -120,19 +120,19 @@ h3, p {
 							<div class = "col-sm-4">
 								<div class="input-group col-sm-5 ">
   									<span class="input-group-text bg-success text-light">Valor</span>
-  									<input class = "form-control" type = "text" disabled="disabled" name="valor"> <!-- Texto valor del producto -->
+  									<input class = "form-control" type = "text" disabled="disabled" name="valor" value = "${producto.getPrecio_venta()}"> <!-- Texto valor del producto -->
 								</div>
 							</div>
 							<div class = "col-sm-4">
 								<div class="input-group col-sm-5">
   									<span class="input-group-text bg-success text-light">IVA</span>
-  									<input class = "form-control" type = "text" disabled="disabled" name="IVA"> <!-- Texto IVA del producto -->
+  									<input class = "form-control" type = "text" disabled="disabled" name="IVA" value = "${producto.getIvacompra()}"> <!-- Texto IVA del producto -->
 								</div>
 							</div>
 							<div class = "col-sm-3">
 								<div class="input-group col-sm-5">
   									<span class="input-group-text bg-success text-light">Cantidad</span>
-  									<input class = "form-control" type = "number" name="cantidad"> <!-- Texto cantidad del producto -->
+  									<input class = "form-control" type = "number" name="cantidad" > <!-- Texto cantidad del producto -->
 								</div>
 							</div>
 						</div>
