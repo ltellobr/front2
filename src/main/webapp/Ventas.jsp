@@ -80,32 +80,35 @@ h3, p {
 						<span class = "text-center">Datos del Cliente</span>
 					</div>
 					<div class = "card-body ">
-						<form action="">
+					
+						<form action="ControladorVentas" method = "POST">          <!-- Primer formulario CLIENTE-->
 							<div class = "row">
 								<label class = "col-form-label">Cedula</label>
 								<div class = "col-sm-5">
 									<div class="input-group col-sm-5">
-  										<input class = "form-control" type="number" name ="txtCedula"> <!-- Texto cedular del cliente -->
-  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar" value ="Buscar"> <!-- Boton buscar cliente -->
+  										<input class = "form-control" type="number" name ="txtCedula"> <!-- Texto cedula del cliente -->
+  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar1" value ="Buscar Cliente"> <!-- Boton buscar cliente -->
 									</div>
 								</div>
 								<div class = "col-sm-6 mb-2">
-									<input class = "form-control" type = "text" disabled="disabled"> <!-- Texto nombre del cliente -->
+									<input class = "form-control" type = "text" disabled="disabled" name = "salidaCleinte" value = "${cliente.getNombre_cliente}"> <!-- Texto nombre del cliente -->
 								</div>
 							</div>	
 						</form>
+						
 					</div>
 					<div class = "card header bg-success text-light">
 						<span class = "text-center">Datos del Producto</span>
 					</div>
 					<div class = "card-body">
-						<form action="">
+					
+						<form action="ControladorVentas" method = "POST">           <!-- Segundo Formulario PRODUCTO -->
 						<div class = "row">
 							<label class = "col-form-label">Codigo de producto</label>
 								<div class = "col-sm-5">
 									<div class="input-group col-sm-5">
   										<input class = "form-control" type="text" name ="txtCod"> <!-- Texto Buscar  producto -->
-  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar" value ="Buscar"> <!-- Tboton para buscar el producto -->
+  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar" value ="Buscar Producto"> <!-- Tboton para buscar el producto -->
 									</div>
 								</div>
 								<div class = "col-sm-6 mb-2">
@@ -139,6 +142,8 @@ h3, p {
 							</div>
 						</div>
 						</form>
+						
+						
 					</div>
 				</div>
 			</div>
@@ -178,8 +183,8 @@ h3, p {
 											<td>${usuarios.getNombre_usuario()}</td>
 											<td>${usuarios.getPassword()} <input class="form-control" type ="number" name = "tabla_cantidad"> </td> <!-- texto para agregar cantidad adicional a la compra -->
 											<td>Editar</td>
-											<td> <input class="btn btn-sm-outline-success" type ="submit" name="agregar_tabla"> <!-- Boton agregar cantidad a la comrpa -->
-											<input class="btn btn-sm-outline-danger" type ="submit" name="eliminar_tabla">   <!-- Boton quitar producto a la comrpa -->
+											<td> <input class="btn btn-sm-outline-success" type ="submit" name="agregar_tabla" value="OK"> <!-- Boton agregar cantidad a la comrpa -->
+											<input class="btn btn-sm-outline-danger" type ="submit" name="eliminar_tabla" value ="Borrar">   <!-- Boton quitar producto a la comrpa -->
 											</td>
 										</tr>
 									</c:forEach>					
