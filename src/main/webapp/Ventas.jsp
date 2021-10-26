@@ -14,7 +14,7 @@
 <style>
 body {
 	background-image:
-		url('https://image.freepik.com/vector-gratis/asistencia-sanitaria-medica-color-azul_1017-26800.jpg');
+		url('http://www.freeimageslive.com/galleries/backdrops/abstract/preview/twisted_wires.jpg');
 }
 
 h3, p {
@@ -25,49 +25,59 @@ h3, p {
 </head>
 <body>
 	<header>
+		<div class = "container">
+		<div class = "row">
+			<div class = "col text-center d-none d-lg-block col-md-12 col-lg-12 col-xl-12 rounded">
+				<img alt="" src="img/rocking-horse.png" width="36">
+			</div>
+			<div class = "col-12 text-center" >
+				<h2>Tienda Grupo6</h2>
+			</div>
+		</div>
+	</div>
 		<!-- Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-success">
+		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
 			<div class="collapse navbar-collapse" id="navbar">
 				<ul class="navbar-nav">
 					<li class="nav-item active"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light"
+						class="btn btn-primary"
 						href="Controlador?accion=Menu&menu=Principal">Inicio</a></li>
 					<!-- Boton Navbar Inicio  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light"
+						class="btn btn-primary"
 						href="Controlador?accion=Menu&menu=Usuario">Usuarios</a></li>
 					<!-- Boton Navbar Usuario  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light"
+						class="btn btn-primary"
 						href="Controlador?accion=Menu&menu=Cliente">Clientes</a></li>
 					<!-- Boton Navbar Cliente  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light"
+						class="btn btn-primary"
 						href="Controlador?accion=Menu&menu=Proveedor">Proveedores</a></li>
 					<!-- Boton Navbar Proveedor  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light"
+						class="btn btn-primary"
 						href="Controlador?accion=Menu&menu=Productos">Productos</a></li>
 					<!-- Boton Navbar Productos  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light"
+						class="btn btn-primary"
 						href="Controlador?accion=Menu&menu=Ventas">Ventas</a></li>
 					<!-- Boton Navbar Ventas  -->
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light"
+						class="btn btn-primary"
 						href="Controlador?accion=Menu&menu=Reportes">Reportes</a></li>
 					<!-- Boton Navbar Reportes  -->
 				</ul>
 			</div>
 			<!-- Boton salir -->
-			<a class="btn btn-outline-light"
+			<a class="btn btn-primary"
 				href="Controlador?accion=Menu&menu=Salir"> Salir</a>
 		</nav>
 		<!-- Fin Navbar -->
@@ -76,7 +86,7 @@ h3, p {
 		<div class = "row mt-5">
 			<div class="col-lg-5 col-md-6 col12">
 				<div class = "card">
-					<div class = "card header bg-success text-light">
+					<div class = "card header bg-primary text-light">
 						<span class = "text-center">Datos del Cliente</span>
 					</div>
 					<div class = "card-body ">
@@ -87,7 +97,7 @@ h3, p {
 								<div class = "col-sm-5">
 									<div class="input-group col-sm-5">
   										<input class = "form-control" type="number" name ="txtCedula" value = "${cliente.getCedula_cliente()}"> <!-- Texto cedula del cliente -->
-  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar1" value ="Buscar Cliente"> <!-- Boton buscar cliente -->
+  										<input class="btn btn-outline-primary" type="submit" id="Buscar" name = "Buscar1" value ="Buscar Cliente"> <!-- Boton buscar cliente -->
 									</div>
 								</div>
 								<div class = "col-sm-6 mb-2">
@@ -97,7 +107,7 @@ h3, p {
 						</form>
 						
 					</div>
-					<div class = "card header bg-success text-light">
+					<div class = "card header bg-primary text-light">
 						<span class = "text-center">Datos del Producto</span>
 					</div>
 					<div class = "card-body">
@@ -108,7 +118,7 @@ h3, p {
 								<div class = "col-sm-5">
 									<div class="input-group col-sm-5">
   										<input class = "form-control" type="text" name ="txtCod" value = "${producto.getCodigo_producto()}"> <!-- Texto Buscar  producto -->
-  										<input class="btn btn-outline-success" type="submit" id="Buscar" name = "Buscar2" value ="Buscar Producto"> <!-- Tboton para buscar el producto -->
+  										<input class="btn btn-outline-primary" type="submit" id="Buscar" name = "Buscar2" value ="Buscar Producto"> <!-- Tboton para buscar el producto -->
 									</div>
 								</div>
 								<div class = "col-sm-6 mb-2">
@@ -119,26 +129,26 @@ h3, p {
 							<label class = "col-form-label">Datos del producto</label>
 							<div class = "col-sm-4">
 								<div class="input-group col-sm-5 ">
-  									<span class="input-group-text bg-success text-light">Valor</span>
+  									<span class="input-group-text bg-primary text-light">Valor</span>
   									<input class = "form-control" type = "text" disabled="disabled" name="valor" value = "${producto.getPrecio_venta()}"> <!-- Texto valor del producto -->
 								</div>
 							</div>
 							<div class = "col-sm-4">
 								<div class="input-group col-sm-5">
-  									<span class="input-group-text bg-success text-light">IVA</span>
+  									<span class="input-group-text bg-primary text-light">IVA</span>
   									<input class = "form-control" type = "text" disabled="disabled" name="IVA" value = "${producto.getIvacompra()}"> <!-- Texto IVA del producto -->
 								</div>
 							</div>
-							<div class = "col-sm-3">
+							<div class = "col-sm-8">
 								<div class="input-group col-sm-5">
-  									<span class="input-group-text bg-success text-light">Cantidad</span>
+  									<span class="input-group-text bg-primary text-light">Cantidad</span>
   									<input class = "form-control" type = "number" name="cantidad" > <!-- Texto cantidad del producto -->
 								</div>
 							</div>
 						</div>
 						<div class = "row justify-content-md-center">
 							<div class="d-grid gap-2">
-								<input class="btn btn-success" type = "submit" name = "Agregar" value ="Agregar Producto"> <!-- Agregar producto al carro o lista de compras -->
+								<input class="btn btn-primary" type = "submit" name = "Agregar" value ="Agregar Producto"> <!-- Agregar producto al carro o lista de compras -->
 							</div>
 						</div>
 						</form>
@@ -183,7 +193,7 @@ h3, p {
 											<td>${usuarios.getNombre_usuario()}</td>
 											<td>${usuarios.getPassword()} <input class="form-control" type ="number" name = "tabla_cantidad"> </td> <!-- texto para agregar cantidad adicional a la compra -->
 											<td>Editar</td>
-											<td> <input class="btn btn-sm-outline-success" type ="submit" name="agregar_tabla" value="OK"> <!-- Boton agregar cantidad a la comrpa -->
+											<td> <input class="btn btn-sm-outline-primary" type ="submit" name="agregar_tabla" value="OK"> <!-- Boton agregar cantidad a la comrpa -->
 											<input class="btn btn-sm-outline-danger" type ="submit" name="eliminar_tabla" value ="Borrar">   <!-- Boton quitar producto a la comrpa -->
 											</td>
 										</tr>
@@ -196,7 +206,7 @@ h3, p {
 						<form action="">
 							<div class = row>
 								<div class = "col-5">
-									<input class = "btn btn-success" type="submit" name="Finalizar" value="Finalizar Compra"> <!-- Boton finalizar comrpa -->
+									<input class = "btn btn-primary" type="submit" name="Finalizar" value="Finalizar Compra"> <!-- Boton finalizar comrpa -->
 									<input class = "btn btn-danger" type="submit" name="Cancelar" value="Cancelar Compra"> <!-- Boton cancelar comrpa -->
 								</div>
 								<div class = "col-7">

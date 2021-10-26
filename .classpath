@@ -13,17 +13,17 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/cesar/OneDrive/Documentos/EclipseProjects/json-simple-1.1.1.jar">
+	<classpathentry kind="lib" path="C:/Users/ltell/eclipse-workspace/json-simple-1.1.1.jar/json-simple-1.1.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/cesar/OneDrive/Documentos/EclipseProjects/javax.servlet.jsp.jstl-1.2.1.jar">
+	<classpathentry kind="lib" path="C:/Users/ltell/eclipse-workspace/jstl-1.2.jar/jstl-1.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/cesar/OneDrive/Documentos/EclipseProjects/javax.servlet.jsp.jstl-api-1.2.1.jar">
+	<classpathentry kind="lib" path="C:/Users/ltell/eclipse-workspace/javacsv-2.0.jar/javacsv-2.0.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

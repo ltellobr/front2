@@ -155,17 +155,7 @@ public class ControladorProductos extends HttpServlet {
 		}
 	}
 			
-		/*File f = new File("C:/Prueba/productos.csv");
-		FileOutputStream ous = new FileOutputStream(f);
-		int dato = is.read();
-		while(dato != -1) {
-			ous.write(dato);
-			dato = is.read();
-		}
 		
-		ous.close();
-		is.close();*/
-
 }
 
 

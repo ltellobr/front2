@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta charset="utf-8">
-<title>Login DROGUERIA</title>
+<title>Login Tiendagrupo6</title>
 <!-- Link que carga todas las librerias de bootstrap5 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -17,11 +17,11 @@
 <style type="text/css">
 body {
 	background:
-		url(https://image.freepik.com/vector-gratis/asistencia-sanitaria-medica-color-azul_1017-26800.jpg);
+		url(http://www.freeimageslive.com/galleries/backdrops/abstract/preview/twisted_wires.jpg);
 }
 
 .bg {
-	background-image: url(img/logo2.png);
+	background-image: url(http://www.freeimageslive.com/galleries/home/playroom/preview/childs_tricycle.jpg);
 	background-position: center;
 	background-size: cover;
 }
@@ -48,11 +48,10 @@ body {
 				<!-- clase que crea una columna o marco invisible -->
 				<div class="text-end">
 					<!-- clase que alinea el texto al final de la columna -->
-					<img alt="" src="img/logo.jpg" width="48">
+					<img alt="" src="img/rocking-horse.png" width="48">
 					<!-- Se carga el logoy se alinea al final como se explica anteriormente -->
 				</div>
-				<h2 class="fw-bold text-center pt-5 mb-5">Bienvenidos a
-					DROGUERIA</h2>
+				<h2 class="fw-bold text-center pt-5 mb-5">Bienvenidos a Tienda del Grupo6</h2>
 				<!-- la clase fw-bold da negrilla text center centra y pt y mb da volumen al texto -->
 				<div class=fluid-container>
 				<div class="card border border-white" >
